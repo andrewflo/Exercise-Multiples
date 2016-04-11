@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Exercise_Multiples" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,92 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chalkboard" translatesAutoresizingMaskIntoConstraints="NO" id="Mza-2y-15I" userLabel="chalkboardBg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MULTIPLES" translatesAutoresizingMaskIntoConstraints="NO" id="7IR-9F-zZo" userLabel="multiplesLogo">
+                                <rect key="frame" x="138" y="20" width="325" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="byg-v5-vmq"/>
+                                    <constraint firstAttribute="width" constant="325" id="iOY-bX-grn"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnX-ps-xgn" userLabel="playBtn">
+                                <rect key="frame" x="177" y="349" width="246" height="243"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="Nz7-7i-sYf"/>
+                                    <constraint firstAttribute="height" constant="243" id="cWw-GN-bvu"/>
+                                </constraints>
+                                <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ppa-Sl-OKT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What multiple to add by?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z7l-nq-ZUV" userLabel="multipleTxtFld">
+                                <rect key="frame" x="170" y="279" width="260" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OAK-Ec-TVJ"/>
+                                    <constraint firstAttribute="width" constant="260" id="yWU-Om-JeW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4j-k2-2WM" userLabel="addBtn">
+                                <rect key="frame" x="168" y="419" width="265" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="4hb-uf-fuO"/>
+                                    <constraint firstAttribute="height" constant="101" id="zfW-uy-0NX"/>
+                                </constraints>
+                                <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OTi-rD-ku4"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Add to add!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKv-xi-0rq" userLabel="multiplesLbl">
+                                <rect key="frame" x="20" y="177.5" width="560" height="38.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="P4j-k2-2WM" secondAttribute="bottom" constant="80" id="8eP-tP-bQX"/>
+                            <constraint firstItem="Z7l-nq-ZUV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lsv-g5-ikb"/>
+                            <constraint firstItem="7IR-9F-zZo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NFo-gs-ghj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mza-2y-15I" secondAttribute="bottom" id="Oep-0p-rNK"/>
+                            <constraint firstItem="tnX-ps-xgn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SfD-oU-beg"/>
+                            <constraint firstItem="UKv-xi-0rq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Uw0-c6-Lg1"/>
+                            <constraint firstItem="UKv-xi-0rq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="W3x-kt-cdc"/>
+                            <constraint firstItem="tnX-ps-xgn" firstAttribute="top" secondItem="Z7l-nq-ZUV" secondAttribute="bottom" constant="20" id="eeM-Fa-jRF"/>
+                            <constraint firstItem="Mza-2y-15I" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lQC-gj-cCJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Mza-2y-15I" secondAttribute="trailing" id="ql1-KW-05s"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tnX-ps-xgn" secondAttribute="bottom" constant="8" id="t3T-9U-fWi"/>
+                            <constraint firstItem="Mza-2y-15I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ux9-M5-Ru1"/>
+                            <constraint firstItem="7IR-9F-zZo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="wWW-tr-lrg"/>
+                            <constraint firstItem="Mza-2y-15I" firstAttribute="top" secondItem="UKv-xi-0rq" secondAttribute="bottom" constant="-216" id="x9n-pI-e6Q"/>
+                            <constraint firstItem="P4j-k2-2WM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zhm-sx-a5c"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="addButton" destination="P4j-k2-2WM" id="29C-Ml-mAX"/>
+                        <outlet property="logoImage" destination="7IR-9F-zZo" id="AzY-Aq-3GS"/>
+                        <outlet property="multipleLabel" destination="UKv-xi-0rq" id="5CM-bf-4c7"/>
+                        <outlet property="multipleTextField" destination="Z7l-nq-ZUV" id="Pea-sn-ACq"/>
+                        <outlet property="playButton" destination="tnX-ps-xgn" id="Vsd-uc-1I7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="360" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MULTIPLES" width="533" height="124"/>
+        <image name="add" width="211" height="101"/>
+        <image name="chalkboard" width="801" height="750"/>
+        <image name="play" width="272" height="268"/>
+    </resources>
 </document>
